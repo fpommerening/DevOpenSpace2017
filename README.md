@@ -3,7 +3,7 @@
 Web: https://devopenspace.de/  
 Twitter: http://twitter.com/devopenspace
 
-Datum: 13.Oktober 2016
+Datum: 13.Oktober 2017
 
 #Workshop: .NET in the big box
 mit Frank Pommerening <a href="https://twitter.com/fpommerening"><img src="images/TwitterLogo.png" alt="Follow @fpommerening" width=30/></a>
