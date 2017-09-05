@@ -15,7 +15,7 @@ mit Frank Pommerening <a href="https://twitter.com/fpommerening"><img src="image
 
 <a name="zielgruppe"></a>
 ## 1. Zielgruppe
-Der Workshop richtet sich an Entwickler die weitergehende Themen rund um Docker kennen lernen möchten. Es werden bereits Erfahrungen mit Docker-Files und Docker-Compose benötigt.
+Der Workshop richtet sich an (.NET-) Entwickler die weitergehende Themen rund um Docker kennen lernen möchten. Es werden bereits Erfahrungen mit Docker-Files und Docker-Compose benötigt.
 
  <a name="themen"></a>
 ## 2. Inhalt
@@ -39,7 +39,6 @@ Die folgende Liste gibt einen Überblick über mögliche Themen.
 [x] <a href="https://code.visualstudio.com/">Visual Studio Code</a></br> mit den Plugins
 - Docker (Microsoft)
 - C# (Microsoft)
-
 [x] Dockerumgebung z.B. <a href="https://www.docker.com/products/docker-toolbox">Docker-Toolbox</a> oder <a href="https://docs.docker.com/docker-for-windows/"> Docker for Windows</a> (<b>empfohlen</b>)
 [x] Account für Dockerhub und Microsoft Visual Studio Online
 
