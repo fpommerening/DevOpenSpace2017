@@ -36,10 +36,11 @@ Die folgende Liste gibt einen Überblick über mögliche Themen.
 <a name="voraussetzungen"></a>
 3. Teilnehmer-Voraussetzungen / Vorbereitung
 [x] Notebook mit LAN-Zugang für Zugriff auf lokale Ressourcen
-[x] <a href="https://code.visualstudio.com/">Visual Studio Code</a></br> mit den Plugins
+[x] <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></br> mit den Plugins
 - Docker (Microsoft)
 - C# (Microsoft)
-[x] Dockerumgebung z.B. <a href="https://www.docker.com/products/docker-toolbox">Docker-Toolbox</a> oder <a href="https://docs.docker.com/docker-for-windows/"> Docker for Windows</a> (<b>empfohlen</b>)
+<br/>
+[x] Dockerumgebung z.B. <a href="https://www.docker.com/products/docker-toolbox" target="_blank">Docker-Toolbox</a> oder <a href="https://docs.docker.com/docker-for-windows/" target="_blank"> Docker for Windows</a> (<b>empfohlen</b>)<br/>
 [x] Account für Dockerhub und Microsoft Visual Studio Online
 
-<b>Die Präsentation könnt ihr auf der <a href="http://fpommerening.github.io/DevOpenSpace2017/index.html">GitHub-Page</a> einsehen.</b> (Hinweis: die finale Version wird nach der Veranstaltung bereitgestellt.)
+<b>Die Präsentation könnt ihr auf der <a href="http://fpommerening.github.io/DevOpenSpace2017/index.html"  target="_blank">GitHub-Page</a> einsehen.</b> (Hinweis: die finale Version wird nach der Veranstaltung bereitgestellt.)
