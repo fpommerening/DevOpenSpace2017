@@ -22,6 +22,8 @@ Der Workshop richtet sich an (.NET-) Entwickler die weitergehende Themen rund um
 Die folgende Liste gibt einen Überblick über mögliche Themen.
 - Containerbasierter Build (.NET Core Anwendung)
    - Defintionen mit Cake
+   - Multi-stage Build
+   - Integration Dockerhub
    - Integration Microsoft Visual Studio Online
 - Multihost-Anwendungen mit Docker Swarm
    - Docker Swarm vs. Docker Swarm Mode
@@ -37,8 +39,9 @@ Die folgende Liste gibt einen Überblick über mögliche Themen.
 3. Teilnehmer-Voraussetzungen / Vorbereitung</br>
 [x] Notebook mit LAN-Zugang für Zugriff auf lokale Ressourcen</br>
 [x] <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> mit den Plugins
-- Docker (Microsoft)
-- C# (Microsoft)
+    - Docker (Microsoft)
+    - C# (Microsoft)
+
 [x] Dockerumgebung z.B. <a href="https://www.docker.com/products/docker-toolbox" target="_blank">Docker-Toolbox</a> oder <a href="https://docs.docker.com/docker-for-windows/" target="_blank"> Docker for Windows</a> (<b>empfohlen</b>)<br/>
 [x] Account für Dockerhub und Microsoft Visual Studio Online
 
