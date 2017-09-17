@@ -164,89 +164,275 @@
 			</section>
 			<section>
 				<section>
-					<h2>Build  / Integration Dockerhub</h2>
+					<h2>Build / Integration Dockerhub</h2>
 				</section>
 				<section>
 					Die Verknüpfung von GitHub und Docker Hub gestattet eine automatische Erstellung der Container mit jeder Codeänderung.
-					<img src="images/githubdockerhub.svg" alt="schema flow github and dockerhub" style="border: 0"/>
-					Voraussetzungen:
+					<img src="images/githubdockerhub.svg" alt="schema flow github and dockerhub" style="border: 0" /> Voraussetzungen:
 					<ul>
 						<li>Accounts bei GitHub und Docker Hub existieren</li>
 						<li>Quellcode inkl. Dockerfile ist in einem Repository auf GitHub vorhanden</li>
 					</ul>
-					</section>
-					<section>
-						<h3>Verbindung GitHub und Docker Hub</h3>
-						<ol start="1">
-							<li>Login bei Docker Hub</li>
-							<li>Profil -> Setting -> Linked Accounts & Services</li>
-						</ol>
-						<img src="images/gitdocker_01.png" style="height: 350px"/>
-					</section>
-					<section>
-						<ol start="3">
-							<li>Auswahl des Zugriffs</li>
-						</ol>
-						<br />
-						<img src="images/gitdocker_02.png" style="height: 500px"/>
-					</section>
-					<section>
-						<ol start="4">
-							<li>Autorisierung des Zugriffs</li>
-							<li>Bestätigung mit GitHub-Kennwort</li>
-						</ol>
-						<br />
-						<img src="images/gitdocker_03.png" style="height: 400px"/>
-						<img src="images/gitdocker_04.png" style="height: 250px"/>
-					</section>
-					<section>
-						<h3>Automatischer Build</h3>
-						<ol>
-							<li>Login bei Docker Hub</li>
-							<li>Create -> Create Automated Build</li>
-							<li>Auswahl Herkunft Quellcode (GitHub oder Bitbucket)</li>
-						</ol><br />
-						<img src="images/gitdocker_05.png" style="height: 400px"/>
-					</section>
-					<section>
-						<ol start="4">
-							<li>Auswahl des Quell-Repository</li>
-						</ol>
-						<img src="images/gitdocker_06.png" style="height: 250px"/>
-						
-					</section>
-					<section>
-						<ol start="5">
-							<li>Konfiguration Docker Hub-Repository
+				</section>
+				<section>
+					<h3>Verbindung GitHub und Docker Hub</h3>
+					<ol start="1">
+						<li>Login bei Docker Hub</li>
+						<li>Profil -> Setting -> Linked Accounts & Services</li>
+					</ol>
+					<img src="images/gitdocker_01.png" style="height: 350px" />
+				</section>
+				<section>
+					<ol start="3">
+						<li>Auswahl des Zugriffs</li>
+					</ol>
+					<br />
+					<img src="images/gitdocker_02.png" style="height: 500px" />
+				</section>
+				<section>
+					<ol start="4">
+						<li>Autorisierung des Zugriffs</li>
+						<li>Bestätigung mit GitHub-Kennwort</li>
+					</ol>
+					<br />
+					<img src="images/gitdocker_03.png" style="height: 400px" />
+					<img src="images/gitdocker_04.png" style="height: 250px" />
+				</section>
+				<section>
+					<h3>Automatischer Build</h3>
+					<ol>
+						<li>Login bei Docker Hub</li>
+						<li>Create -> Create Automated Build</li>
+						<li>Auswahl Herkunft Quellcode (GitHub oder Bitbucket)</li>
+					</ol><br />
+					<img src="images/gitdocker_05.png" style="height: 400px" />
+				</section>
+				<section>
+					<ol start="4">
+						<li>Auswahl des Quell-Repository</li>
+					</ol>
+					<img src="images/gitdocker_06.png" style="height: 250px" />
+
+				</section>
+				<section>
+					<ol start="5">
+						<li>Konfiguration Docker Hub-Repository
 							<ul>
 								<li>Namespace (Fix: Benutzer)</li>
 								<li>Name (Default: Name des GitHub-Repository)</li>
 								<li>Sichtbarkeit (Default: Öffentlich)</li>
 								<li>Kurzbeschreibung (Pflichtfeld)</li>
 							</ul>
-							</li>
-						</ol>
+						</li>
+					</ol>
+					<br />
+					<img src="images/gitdocker_07.png" style="height: 400px" />
+				</section>
+				<section>
+					<ol start="6">
+						<li>Anpassung Build-Einstellungen (Build-Settings)
+							<ul>
+								<li>Pfad zum Dockerfile</li>
+								<li>Definition Tags</li>
+								<li>Verwendete Git-Branches</li>
+							</ul>
+						</li>
+					</ol>
+					<img src="images/gitdocker_08.png" style="height: 400px" />
+				</section>
+				<section>
+					<ol start="7">
+						<li>Prüfung Build (Build Details)</li>
+					</ol>
+					<img src="images/gitdocker_09.png" style="height: 400px" />
+				</section>
+			</section>
+			</section>
+			<section>
+				<section>
+					<h2>Visual Studio Team Services</h2>
+				</section>
+				<<section>
+					...
+			</section>
+			</section>
+			<section>
+				<section>
+					<h2>circleci</h2>
+				</section>
+				<<section>
+					...
+			</section>
+			</section>
+			<section>
+				<section>
+					<h2>Docker Swarm / Docker Swarm Mode</h2>
+					<img src="images/swarmlogo.jpg" style="width: 300px;border: 0" />
+					<p class="fragment">Container-Cluster über mehrere Docker-Hosts</p>
+				</section>
+				<section>
+					<h3>Docker Swarm Visualizer</h3>
+					<p style="text-align: left">
+						Das Tool Docker Swarm Visualizer gestattet eine Übersicht der laufenden Services und Hosts.
+						<img src="images/visualizer.png" style="border: 0;height: 350px;float:right">
 						<br />
-						<img src="images/gitdocker_07.png" style="height: 400px"/>
-					</section>
-					<section>
-						<ol start="6">
-							<li>Anpassung Build-Einstellungen (Build-Settings)
-								<ul>
-									<li>Pfad zum Dockerfile</li>
-									<li>Definition Tags</li>
-									<li>Verwendete Git-Branches</li>
-								</ul>
-							</li>
-						</ol>
-						<img src="images/gitdocker_08.png" style="height: 400px"/>
-					</section>
-					<section>
-						<ol start="7">
-							<li>Prüfung Build (Build Details)</li>
-						</ol>
-						<img src="images/gitdocker_09.png" style="height: 400px"/>
-					</section>
+						<br /> Lizenz: Apache <a href="https://github.com/ManoMarks/docker-swarm-visualizer" target="_blank">GitHub</a>
+						<br />
+						<br /> Verfügbare Container:<br />
+						<ul>
+							<li>Linux x64: <a href="https://hub.docker.com/r/manomarks/visualizer/" target="_blank">manomarks/visualizer</a></li>
+							<li>Linux arm: <a href="https://hub.docker.com/r/alexellis2/visualizer-arm/" target="_blank">alexellis2/visualizer-arm</a></li>
+							<li>Windows: <a href="https://hub.docker.com/r/stefanscherer/visualizer-windows/" target="_blank">stefanscherer/visualizer-windows</a></li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<h3>Docker Swarm <a href="https://docs.docker.com/engine/reference/commandline/swarm/" target="_blank" class="infolink"></a>						</h3>
+					<h4>Cluster / Swarm initalisieren</h4>
+					<pre><code class="docker">docker swarm init [OPTIONS] </code></pre>
+					<p style="text-align: left">
+						Nach erfolgreicher Erstellung werden der Token und Befehl zum Hinzufügen angezeigt.
+					</p>
+					<h4>Knoten hinzufügen</h4>
+					<pre><code class="docker">docker swarm join [OPTIONS] HOST:PORT</code></pre>
+					<p style="text-align: left">
+						-- token Zugriffstoken
+					</p>
+
+				</section>
+				<section>
+					<h4>Knoten entfernen</h4>
+					<pre><code class="docker">docker swarm leave [OPTIONS]</code></pre>
+					<p style="text-align: left">
+						--force, -f Erzwingt das Verlassung und ignoriert Warnungen WICHTIG: die Node muss noch mein Manager abgemeldet werden!
+					</p>
+					<h4>Zugriffstoken anzeigen</h4>
+					<pre><code class="docker">docker swarm join-token [OPTIONS] (worker|manager)</code></pre>
+					<h4>Cluster / Swarm aktualsieren</h4>
+					<pre><code class="docker">docker swarm Update [OPTIONS]</code></pre>
+				</section>
+				<section>
+					<h3>Docker Node <a href="https://docs.docker.com/engine/reference/commandline/node/" targe="_blank" class="infolink"></a></h3>
+					<h4>Knoten anzeigen</h4>
+					<pre><code class="docker">docker node ls [OPTIONS]</code></pre>
+					<h4>Detailierte Informationen zu / zum Knoten anzeigen</h4>
+					<pre><code class="docker">docker node inspect [OPTIONS] self|NODE </code></pre>
+					<h4>Aufgaben / Prozesse eines Knoten anzeigen</h4>
+					<pre><code class="docker">docker node ps [OPTIONS] [NODE] </code></pre>
+					<h4>Knoten aus dem Cluster entfernen</h4>
+					<pre><code class="docker">docker node rm [OPTIONS] Node</code></pre>
+				</section>
+				<section>
+					<h4>Knoten vom Worker zum Manager heraufstufen</h4>
+					<pre><code class="docker">docker node promote NODE</code></pre>
+					<h4>Knoten vom Manager zum Worker herabstufen</h4>
+					<pre><code class="docker">docker node demote NODE</code></pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Docker Swarm - Services</h2>
+				</section>
+				<section>
+					Anwendungen die Cluster bereitgestellt werden, werden als Services bezeichnet. Um den Service auf mehreren Nodes bereitzustellen,
+					muss das Image in einer Registry abgelegt sein.
+					<br />
+					<h4>Service erstellen <a href="https://docs.docker.com/engine/reference/commandline/service_create/" target="_blank" class="infolink"></a></h4>
+					<pre><code class="docker">docker service create [OPTIONS] IMAGE [COMMAND] [ARG...]</code></pre>
+					<table>
+						<tbody>
+							<tr>
+								<td>--name</td>
+								<td>Name für den Service</td>
+							</tr>
+							<tr>
+								<td>--network</td>
+								<td>Verwendetes Netzwerk</td>
+							</tr>
+							<tr>
+								<td>--publish, -p</td>
+								<td>Veröffentlicht den Port</td>
+							</tr>
+							<tr>
+								<td>--replicas</td>
+								<td>Zahl der gleichzeitig laufenden Instanzen</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h4>Services entfernen <a href="https://docs.docker.com/engine/reference/commandline/service_rm/" target="_blank" class="infolink"></a></h4>
+					<pre><code class="docker">docker service rm SERVICE</code></pre>
+					<h4>Services anzeigen <a href="https://docs.docker.com/engine/reference/commandline/service_ls/" target="_blank" class="infolink"></a></h4>
+					<pre><code class="docker">docker service ls [OPTIONS] </code></pre>
+					<h4>Details zu / zum Services anzeigen <a href="https://docs.docker.com/engine/reference/commandline/service_inspect/" target="_blank"
+						 class="infolink"></a></h4>
+					<pre><code class="docker">docker service inspect [OPTIONS] SERVICE</code></pre>
+					<h4>Services hoch/runter skalieren <a href="https://docs.docker.com/engine/reference/commandline/service_scale/" target="_blank"
+						 class="infolink"></a></h4>
+					<pre><code class="docker">docker service scale SERVICE=ANZAHL</code></pre>
+					<h4>Logs eines Services anzeinge <a href="https://docs.docker.com/engine/reference/commandline/service_logs/" target="_blank"
+						 class="infolink"></a></h4>
+					<pre><code class="docker">docker service logs [OPTIONS] SERVICE</code></pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Docker Swarm mit Docker-Compose / Docker-Stack</h2>
+				</section>
+				<section>
+					...
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Docker Swarm auf ARM </h2>
+					<h3>u.a. Raspberry PI 3</h3>
+				</section>
+				<section>
+					<h3>Installation</h3>
+					<h4>Hypriot OS <a href="https://blog.hypriot.com/" target="_blank" class="infolink"></a></h4>
+					Hypriot OS ist eine spezielle Distribution für Docker auf ARM-Geräte. Sie war bereits vor dem offiziellen Support durch Docker
+					verfügbar.
+					<br />
+					<h4>Raspbian Jessie Lite <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" class="infolink"></a></h4>
+					Docker unterstützt nun die ARM-Plattform offiziell. Es kann deshalb auf der Distribution Raspbian der Raspberry Foundation
+					installiert werden.
+					<pre><code class="bash">curl -sSL get.docker.com | sh
+sudo usermod -aG docker pi
+sudo systemctl enable docker
+sudo systemctl start docker</code></pre>
+				</section>
+				<section>
+					<h3>Multiarchitektur</h3>
+					...
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Serverless Computing mit OPENFASS</h2>
+					<h3>Grundlagen und Archtektur</h3>
+				</section>
+				<section>
+					...
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Serverless Computing mit OPENFASS</h2>
+					<h3>Funktionsentwicklung mit .NET Core / node.js</h3>
+				</section>
+				<section>
+					...
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Serverless Computing mit OPENFASS</h2>
+					<h3>Funktionen für Amazon Alexa</h3>
+				</section>
+				<section>
+					...
 				</section>
 			</section>
 
