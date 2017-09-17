@@ -24,7 +24,7 @@ Die folgende Liste gibt einen Überblick über mögliche Themen.
    - Defintionen mit Cake
    - Multi-stage Build
    - Integration Dockerhub
-   - Integration Microsoft Visual Studio Online
+   - Integration Visual Studio Team Services
 - Multihost-Anwendungen mit Docker Swarm
    - Docker Swarm vs. Docker Swarm Mode
    - Service-Definition
@@ -39,10 +39,11 @@ Die folgende Liste gibt einen Überblick über mögliche Themen.
 3. Teilnehmer-Voraussetzungen / Vorbereitung</br>
 [x] Notebook mit LAN-Zugang für Zugriff auf lokale Ressourcen</br>
 [x] Dockerumgebung z.B. <a href="https://www.docker.com/products/docker-toolbox" target="_blank">Docker-Toolbox</a> oder <a href="https://docs.docker.com/docker-for-windows/" target="_blank"> Docker for Windows</a> (<b>empfohlen</b>)<br/>
-[x] Account für Dockerhub und Microsoft Visual Studio Online
+   - Integration Visual Studio Team Services
+[x] Account für Dockerhub und Microsoft Visual Studio Online</br>
 [x] <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> mit den Plugins
-    - Docker (Microsoft)
-    - C# (Microsoft)
+    </br>- Docker (Microsoft)
+    </br>- C# (Microsoft)
 
 
 <b>Die Präsentation könnt ihr auf der <a href="http://fpommerening.github.io/DevOpenSpace2017/index.html"  target="_blank">GitHub-Page</a> einsehen.</b> (Hinweis: die finale Version wird nach der Veranstaltung bereitgestellt.)
