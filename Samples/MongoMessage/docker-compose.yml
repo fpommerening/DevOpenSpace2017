@@ -5,7 +5,7 @@ services:
         networks:
             - mongomessage
     webapp:
-        image: fpommerening/dotnetinthebox:mongomessage
+        image: fpommerening/devopenspace2017:mongomessage
         ports:
             - 4000:5000
         networks:
