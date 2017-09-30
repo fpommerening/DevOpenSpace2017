@@ -1,6 +1,4 @@
-using System;
-
-namespace test1
+namespace FP.DevSpace2017.BuildMultistage.Module
 {
     public class HomeModule : Nancy.NancyModule
     {

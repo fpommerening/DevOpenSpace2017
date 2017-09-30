@@ -1,6 +1,4 @@
-using System;
-
-namespace test1
+namespace FP.DevSpace2017.BuildOutside.Module
 {
     public class HomeModule : Nancy.NancyModule
     {

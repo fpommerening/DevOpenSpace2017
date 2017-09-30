@@ -1,8 +1,4 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Nancy.Owin;
-
-namespace test1
+namespace FP.DevSpace2017.BuildMultistage
 {
     public class Startup
     {
