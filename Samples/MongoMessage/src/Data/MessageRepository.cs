@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace test1.Data
+namespace FP.DevSpace2017.MongoMessage.Data
 {
     public class MessageRepository
     {

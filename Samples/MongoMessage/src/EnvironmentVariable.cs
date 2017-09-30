@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace test1
+namespace FP.DevSpace2017.MongoMessage
 {
     public class EnvironmentVariable
     {

@@ -2,7 +2,7 @@ using System;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace test1.Data
+namespace FP.DevSpace2017.MongoMessage.Data
 {
     public class DtoMessage
     {

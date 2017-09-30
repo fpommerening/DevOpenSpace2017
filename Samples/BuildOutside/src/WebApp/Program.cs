@@ -1,4 +1,7 @@
-﻿namespace FP.DevSpace2017.BuildOutside
+﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+
+namespace FP.DevSpace2017.BuildOutside
 {
     class Program
     {

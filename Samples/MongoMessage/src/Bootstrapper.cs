@@ -1,9 +1,9 @@
+using FP.DevSpace2017.MongoMessage.Data;
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
-using test1.Data;
 
-namespace test1
+namespace FP.DevSpace2017.MongoMessage
 {
      public class Bootstrapper : DefaultNancyBootstrapper
     {

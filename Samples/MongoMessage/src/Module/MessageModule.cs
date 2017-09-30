@@ -1,11 +1,12 @@
 using System.Threading.Tasks;
-using test1.Data;
-using test1.Model;
+using FP.DevSpace2017.MongoMessage.Data;
+using FP.DevSpace2017.MongoMessage.Modell;
+using Nancy;
 using Nancy.ModelBinding;
 
-namespace test1.Modules
+namespace FP.DevSpace2017.MongoMessage.Module
 {
-    public class MessageModule : Nancy.NancyModule
+    public class MessageModule : NancyModule
     {
         public MessageModule(MessageRepository messageRepo)
         {

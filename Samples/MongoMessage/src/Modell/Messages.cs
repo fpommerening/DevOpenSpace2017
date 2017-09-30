@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace test1.Model
+namespace FP.DevSpace2017.MongoMessage.Modell
 {
     public class Messages
     {

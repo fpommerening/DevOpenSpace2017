@@ -1,3 +1,7 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Nancy.Owin;
+
 namespace FP.DevSpace2017.BuildOutside
 {
     public class Startup
