@@ -10,12 +10,13 @@ FROM microsoft/dotnet:2.0-runtime-jessie
 LABEL maintainer "frank@pommerening-online.de"
 ENV REFRESHED_AT 2017-09-23
 
+RUN curl -SL https://github.com/alexellis/faas/releases/download/0.6.5/fwatchdog > /usr/bin/fwatchdog \
+    && chmod +x /usr/bin/fwatchdog
+
 WORKDIR /app/
 COPY --from=builder /app/out/* ./
 
 ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
-RUN curl -SL https://github.com/alexellis/faas/releases/download/0.6.5/fwatchdog > /usr/bin/fwatchdog \
-    && chmod +x /usr/bin/fwatchdog
 
 ENV fprocess="dotnet /app/HalloCSharp.dll"
 EXPOSE 8080
