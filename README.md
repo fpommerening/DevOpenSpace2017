@@ -39,7 +39,8 @@ Die folgende Liste gibt einen Überblick über mögliche Themen.
 3. Teilnehmer-Voraussetzungen / Vorbereitung</br>
 [x] Notebook mit LAN-Zugang für Zugriff auf lokale Ressourcen</br>
 [x] Dockerumgebung z.B. <a href="https://www.docker.com/products/docker-toolbox" target="_blank">Docker-Toolbox</a> oder <a href="https://docs.docker.com/docker-for-windows/" target="_blank"> Docker for Windows</a> (<b>empfohlen</b>)<br/>
-[x] Account für Dockerhub und Microsoft Visual Studio Online</br>
+[x] Accounts für Github, Dockerhub und Microsoft Visual Studio Online</br>
+[x] HTTP-Testtool z.B. <a href="https://www.getpostman.com/" target="_blank">Postman</a></br>
 [x] <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> mit den Plugins
     </br>- Docker (Microsoft)
     </br>- C# (Microsoft)
