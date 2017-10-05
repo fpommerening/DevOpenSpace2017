@@ -1,0 +1,23 @@
+version: '2'
+services: 
+  mongo:
+    image: mongo:3.4.9-jessie
+
+  coresdk:
+    image: microsoft/dotnet:2.0.0-sdk-jessie
+
+  core:
+    image: microsoft/aspnetcore:2.0-jessie
+  
+  node:
+    image: node:8.6.0-alpine
+
+  faasgateway:
+    image: functions/gateway:0.6.5
+
+  prometheus:
+    image: functions/prometheus:latest
+
+  alert:
+    image: functions/alertmanager:latest
+    
