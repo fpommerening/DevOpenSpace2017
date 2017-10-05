@@ -37,10 +37,11 @@ Die folgende Liste gibt einen Überblick über mögliche Themen.
 
 <a name="voraussetzungen"></a>
 3. Teilnehmer-Voraussetzungen / Vorbereitung</br>
-[x] Notebook mit LAN-Zugang für Zugriff auf lokale Ressourcen</br>
+[x] Notebook mit LAN-Zugang und Netzwerkkabel für Zugriff auf lokale Ressourcen</br>
 [x] Dockerumgebung z.B. <a href="https://www.docker.com/products/docker-toolbox" target="_blank">Docker-Toolbox</a> oder <a href="https://docs.docker.com/docker-for-windows/" target="_blank"> Docker for Windows</a> (<b>empfohlen</b>)<br/>
 [x] Accounts für Github, Dockerhub und Microsoft Visual Studio Online</br>
-[x] HTTP-Testtool z.B. <a href="https://www.getpostman.com/" target="_blank">Postman</a></br>
+[x] HTTP-Testtool z.B. <a href="https://www.getpostman.com/" target="_blank">Postman</a><br />
+[x] <a href="https://www.microsoft.com/net/core#windowscmd" target="_blank">.NET Core 2.0 SDK </a><br />
 [x] <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> mit den Plugins
     </br>- Docker (Microsoft)
     </br>- C# (Microsoft)
