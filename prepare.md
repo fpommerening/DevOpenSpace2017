@@ -12,7 +12,7 @@ Lade dazu bitte die benötigten Images und das Git-Repo herunter.
 
     a) Docker for Windows: Powershell starten
 
-    b) Docker-Toolbox: Eingabeaufforderung cmd starten und Verbindung herstellen (Siehe <a href="https://docs.docker.com/toolbox/toolbox_install_windows/#step-3-verify-your-installation" target"_blank">Docs</a>)
+    b) Docker-Toolbox: Eingabeaufforderung cmd starten und Verbindung herstellen (Siehe <a href="https://docs.docker.com/toolbox/toolbox_install_windows/#step-3-verify-your-installation" target="_blank">Docs</a>)
 
 3) Images herunterladen
     a) manuell
