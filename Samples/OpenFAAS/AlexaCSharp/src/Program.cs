@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace FP.DevSpace2017.WebApp
+namespace FP.DevSpace2017.Alexa
 {
     class Program
     {

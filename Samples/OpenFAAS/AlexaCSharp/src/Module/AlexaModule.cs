@@ -1,31 +1,25 @@
 using System;
-using Nancy.Extensions;
-using System.IO;
+using FP.DevSpace2017.Alexa.Model;
+using Nancy;
+using Nancy.ModelBinding;
 
-namespace FP.DevSpace2017.WebApp.Module
+namespace FP.DevSpace2017.Alexa.Module
 {
-    public class AlexaModule : Nancy.NancyModule
+    public class AlexaModule : NancyModule
     {
-        private static string cache = string.Empty;
-
-
         public AlexaModule()
         {
             Post("/", async (args, ct) =>
             {
-                string content;
+                var request = this.Bind<AlexaRequest>();
+                var response = new AlexaResponse();
+                response.Response.OutputSpeech = new OutputSpeech
+                {
+                    Type = "PlainText",
+                    Text = $"Hallo jetzt mit dynamischen Inhalt {DateTime.Now}"
+                };
                 
-                using (Stream responseStream = this.Request.Body)
-                using (StreamReader sr = new StreamReader(responseStream))
-                {
-                    content = await sr.ReadToEndAsync();
-                }
-                if(content.ToLowerInvariant().StartsWith("updatecache"))
-                {
-                    cache = content.Substring(11);
-                }
-
-                return cache.TrimStart();
+                return Response.AsJson(response);
             });
         }
     }
