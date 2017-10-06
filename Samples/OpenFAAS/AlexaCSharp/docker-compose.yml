@@ -51,9 +51,9 @@ services:
     # Sample functions go here.
 
     # Service label of "function" allows functions to show up in UI on http://gateway:8080/
-    webapp:
-        #image: fpommerening/devopenspace2017:webappcsharp
-        image: webappcsharp:latest
+    alexa:
+        #image: fpommerening/devopenspace2017:alexacsharp
+        image: alexacsharp:latest
         labels:
             function: "true"
         depends_on:
