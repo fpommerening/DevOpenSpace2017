@@ -65,7 +65,7 @@ namespace FP.DevSpace2017.Alexa.Module
             var reponse = new AlexaResponse();
             reponse.Response.OutputSpeech = new OutputSpeech
             {
-                Type = "PlaneText",
+                Type = "PlainText",
                 Text = content
             };
 
