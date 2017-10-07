@@ -5,8 +5,19 @@ namespace FP.DevSpace2017.Alexa.Model
     [Serializable]
     public class AlexaRequest
     {
-        public Session Session { get; set; }
+        public AlexaRequest()
+        {
+            Session = new Session();
+            Request = new Request();
+            Context = new Context();
+        }
 
         public string Version { get; set; }
+
+        public Session Session { get; set; }
+        
+        public Request Request { get; set; }
+
+        public Context Context { get; set; }
     }
 }

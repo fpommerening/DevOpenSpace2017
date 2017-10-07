@@ -12,15 +12,64 @@ namespace FP.DevSpace2017.Alexa.Module
             Post("/", async (args, ct) =>
             {
                 var request = this.Bind<AlexaRequest>();
-                var response = new AlexaResponse();
-                response.Response.OutputSpeech = new OutputSpeech
+                AlexaResponse response;
+
+                switch (request.Request.Type)
                 {
-                    Type = "PlainText",
-                    Text = $"Hallo jetzt mit dynamischen Inhalt {DateTime.Now}"
-                };
-                
+                    case "IntentRequest":
+                        response = ExecuteIntent(request);
+                        break;
+                    case "SessionEndedRequest":
+                        response = CreatePlaneTextResponse("Meetup zu Ende - Auf Wiedersehen beim nächsten Mal.");
+                        break;
+                    default:
+                        response = CreatePlaneTextResponse("Willkommen zum Meetup. Was darf ich für dich tun?");
+                        break;
+                }
                 return Response.AsJson(response);
             });
+        }
+
+        private AlexaResponse ExecuteIntent(AlexaRequest request)
+        {
+            var indent = request.Request?.Intent;
+
+            if (indent == null)
+            {
+                return CreateUnkownIntentResponse(string.Empty);
+            }
+            switch (indent.Name.ToLowerInvariant())
+            {
+                case "greeting":
+                    return CreatePlaneTextResponse("Hallo und Willkommen zum Meetup");
+                case "sendoff":
+                    return CreatePlaneTextResponse("Vielen Dank für eure Teilnahme und bis zum nächsten Meetup.");
+                case "amazon.helpintent":
+                    return CreatePlaneTextResponse("Wenn du Hilfe brauchst rufe Torsten oder Greogor.");
+                case "amazon.stopintent":
+                    return CreatePlaneTextResponse("Meetup aus - OK");
+                default:
+                    return CreateUnkownIntentResponse(indent.Name);
+            }
+        }
+
+     
+
+        private AlexaResponse CreateUnkownIntentResponse(string name)
+        {
+            return CreatePlaneTextResponse($"Dein Befehl {name} wurde nicht gefunden.");
+        }
+
+        private AlexaResponse CreatePlaneTextResponse(string content)
+        {
+            var reponse = new AlexaResponse();
+            reponse.Response.OutputSpeech = new OutputSpeech
+            {
+                Type = "PlaneText",
+                Text = content
+            };
+
+            return reponse;
         }
     }
 }
