@@ -17,8 +17,8 @@ services:
             
     nginx-letsencrypt:
         volumes:
-            - "/home/certs:/etc/nginx/certs:ro"
-            - "/var/run/docker.sock:/tmp/docker.sock:ro"
+            - "/home/certs:/etc/nginx/certs:rw"
+            - "/var/run/docker.sock:/var/run/docker.sock"
             - "/home/vhost:/etc/nginx/vhost.d"
             - "/home/html:/usr/share/nginx/html"
             
