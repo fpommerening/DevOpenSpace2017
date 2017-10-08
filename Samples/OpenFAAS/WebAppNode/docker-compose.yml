@@ -51,7 +51,7 @@ services:
     # Sample functions go here.
 
     # Service label of "function" allows functions to show up in UI on http://gateway:8080/
-    consoleargs:
+    webapp:
         #image: fpommerening/devopenspace2017:webappnode
         image: webappnode:latest
         labels:
