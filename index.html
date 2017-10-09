@@ -334,7 +334,18 @@ Der Personal Access Tokel erlaubt dem Build-Agent die Authentifizierung gegenüb
 				</section>
 				<section>
 					<h3>Starten des Build-Agent</h3>
-					...
+						<pre><code class="docker">docker run -e VSTS_ACCOUNT=username
+	-e VSTS_TOKEN=personal_access_token
+	-v /var/run/docker.sock:/var/run/docker.sock
+	-it microsoft/vsts-agent</code></pre>
+Optional:<br />
+<ul>
+	<li>VSTS_POOL ("Default")</li>
+	<li>VSTS_AGENT ($(hostname))</li>
+</ul>
+<br />
+<br />
+Je nach Umgebung z.B. TFS 2017 werden spezielle Tags benötigt.
 				</section>
 				<section>
 					<h3>Defintion Build </h3>
@@ -353,12 +364,89 @@ Der Personal Access Tokel erlaubt dem Build-Agent die Authentifizierung gegenüb
 				<section>
 					<h4>Auswahl Vorlage</h4>
 					<img src="images/vsts_build_04.png" style="border:0px;">
+					<br />
 					Auswahl: Empty process
 				</section>
 				<section>
 						<h4>Defintion Name / Build-Agent</h4>
 						<img src="images/vsts_build_01.png" style="border:0px"><br />
-						Eigenen Build-Agents werden in der Agent queue <b>Default</b> angelegt.
+						Eigenen Build-Agents werden in der Agent queue <i>Default</i> angelegt.
+				</section>
+				<section>
+					<h4>.NET Core Schritte</h4>
+					<img src="images/vsts_build_02.png" style="border:0px"><br />
+					<img src="images/vsts_build_03.png" style="border:0px"><br />
+				</section>
+				<section>
+						<h4>.NET Core Restore</h4>
+						<img src="images/vsts_build_05.png" style="border:0px"><br />
+						 Angabe der Projekt(e) oder alle mit **/*.csproj
+				</section>
+				<section>
+						<h4>.NET Core Build</h4>
+						<img src="images/vsts_build_06.png" style="border:0px"><br />
+				</section>
+				<section>
+						<h4>.NET Core Publish</h4>
+						<img src="images/vsts_build_07.png" style="border:0px;float:left;margin:20px" ><br />
+						Angabe eines Unterordner unterhalb des Ausgabeordners ist für Docker-Build erforderlich.
+				</section>
+				<section>
+					<h4>Kopieren des Dockerfile</h4>
+					<img src="images/vsts_build_08.png" style="border:0px;float:left;margin:20px">
+					Das Dockerfile wird vom Quellenordner in den Ausgabeordner kopiert. So liegt es im Build-Context.
+				</section>
+				<section>
+						<h4>Ausführung Docker-Build</h4>
+						<img src="images/vsts_build_09.png" style="border:0px; height:580px;margin-right:10px;float:left"><br />
+						<p style="text-align:left">
+							Docker File: <br/>
+							Ausgabeordner/Dockerfile<br/><br/>
+							Image Name: <br/>
+							User/Repo/Build-ID<br/><br/>
+							Optional:<br/>
+							Include Latest Tag
+						</p>
+				</section>
+				<section>
+						<h4>Docker Registry Connection</h4>
+						<img src="images/vsts_docker_login.png" style="border:0px;float:left"><br />
+						Verwendung<br />
+						<ul>
+							<li>Abruf privater Images</li>
+							<li>Push von erstellten Images</li>
+						</ul>
+						<br />
+						<br />
+						Neben dem Docker Hub kann auch eine private Registry verbunden werden.
+				</section>
+				<section>
+						<h4>Push zum Docker</h4>
+						<img src="images/vsts_build_10.png" style="border:0px;height:580px;margin-right:20px; float:left">
+							Container Registry Type:<br />
+							<ul>
+								<li>Container Registry (Docker)</li>
+								<li>Azure Container Registry</li>
+							</ul>
+							<br />
+							<br />
+							Docker Registry Connection:<br />
+							neu erstellen / bestehende wählen
+							<br />
+							<br />
+							Imagename: siehe Build-Einstellung<br />
+							<br />
+							Optional: Include Latest Tag
+				</section>
+				<section>
+						<h4>Bereinigung der erstellten Images</h4>
+						<img src="images/vsts_build_11.png" style="border:0px;height:580px;margin-right:20px; float:left"><br/>
+						Löschen von Images ist keine vordefinierte Aktion deshalb generische Aktion <i>Run a Docker Command</i> wählen.
+						<br/> <br/>
+						Befehl: <br/>
+						rmi user/repo/build-ID user/repo:latest
+
+
 				</section>
 			</section>
 			</section>
