@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>containerised applications with docker</title>
+	<title>.NET in the big box</title>
 
 	<meta name="description" content=".NET in the big box">
 	<meta name="author" content="Frank Pommerening">
@@ -59,7 +59,7 @@
 					<br />
 					<a href="mailto:frank@pommerening-online.de">frank@pommerening-online.de</a>
 				</section>
-				<section data-background="images/axp.svg">
+				<section data-background="images/axp.svg" data-menu-title="About axp">
 
 					AXP Consulting GmbH & Co. KG in Leipzig<br/> Gründung: Mai 2012 <br /> Anzahl Mitarbeiter: 8 feste <br/> Branchenfokus:
 					Energiebranche <br/>
@@ -149,17 +149,80 @@
 				</section>
 				<section>
 					<h3>Multi-Stage Build</h3>
+					Die Anwendung wird während der Imageerstellung in einem temporären Container gebaut.
+					Die entstandenen Artefakte werden in den finalen Container kopiert.
+					<table>
+						<tbody>
+							<tr>
+								<th>Vorteile</th>
+								<th>Nachteile</th>
+							</tr>
+							<tr>
+								<td>
+									<ul>
+										<li>i.d.R. kleinere Images und Basisimages</li>
+										<li>Buildserver nicht erforderlich</li>
+										<li>Quellcode und Buildabhängigkeiten nicht enthalten</li>
+									</ul>
+								</td>
+								<td>
+									<ul>
+										<li>komplexere Dockerfiles</li>
+										<li>Mehrere Quellimages (SDK / Runtime) erforderlich</li>
+										<li>Buildfehler schwerer zu debuggen</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</section>
 			</section>
 			<section>
 				<section>
-					<h2>Build with Cake</h2>
+					<h2>Build mit Cake</h2>
+					<img src="images/cake_logo.png" style="border:0px"/>
+				</section>
+				<section data-menu-title="cake keyfacts">
+					<ul>
+						<li>Framework zur Build-Automatisierung (DSL)</li>
+						<li>Open Source</li>
+						<li>Cross platform</li>
+						<li>Projekt der .NET Foundation</li>
+						<li>Erweiterbar durch Plugin</li>
+						<li>Visual Studio Code Unterstützung</li>
+						<li>Integration Build-Server wie TFS, Jenkins, Teamcity ...</li>
+						<li>Quelle: <a href="https://cakebuild.net/" target="_blank">https://cakebuild.net/</a></li>
+					</ul>
 				</section>
 				<section>
-					<h2>Cake-Filee</h2>
+					<h3>Cake-File</h3>
+					Datei zur Beschreibung der einzelnen Aufgaben z.B. Build oder Test sowie deren Abhängigkeit. Die Definition erfolgt in C#.
+					<pre><code class="csharp">var target = Argument("target", "Default");
+Task("Aufgabe1").Does(() =>
+{
+  ...
+}
+
+Task("Aufgabe2").IsDependentOn("Aufgabe1").Does(() =>
+{
+  ...
+}
+
+Task("Default").IsDependentOn("Aufgabe2");
+
+RunTarget(target);</code></pre>
 				</section>
 				<section>
-					...
+					<h3>Erweiterungen</h3>
+					Erweiterung für bestimmte Aufgaben z.B. Komprimierung oder Ausführung von Docker-Befehlen werden als Nuget-Pakete z.T. durch die Community bereitgestellt.
+					<br/>Die Einbindung erfolgt mit der Direktive #addin
+					<pre><code class="csharp">#addin "Cake.Docker"</code></pre>
+					<pre><code class="csharp">#addin nuget:?package=SharpZipLib</code></pre>
+					Angabe spezifische Nuget-Version
+					<pre><code class="csharp">#addin nuget:?package=SharpZipLib&version=1.2.3</code></pre>					
+				</section>
+				<section>
+						<h3>Fehlerbehandlung</h3>
 				</section>
 			</section>
 			<section>
@@ -247,20 +310,35 @@
 					<img src="images/gitdocker_09.png" style="height: 400px" />
 				</section>
 			</section>
-			</section>
 			<section>
 				<section>
 					<h2>Visual Studio Team Services</h2>
+					<h3>Cloudbasierte Komplettlösung für Entwickler von Microsoft</h3>
 				</section>
-				<<section>
-					...
-			</section>
+				<section>
+					Die Build-Defintion erfolgt über ein Webportal.
+Die kostenfrei bereitgestellten Build-Agents werden in Windows-Umgebungen auf Azure ausgeführt.
+Sie erlauben keine Erstellung von Docker-Container. Dafür muss ein eigener externer Build-Agent bzw. Docker-Host bereitgestellt werden.
+<br />
+<br />
+<a href="https://www.visualstudio.com/de/vso/" target="_blank">Zugang / Anmeldung (per Live-ID)</a>
+				</section>
+				<section>
+					<h3>Erstellung Personal Access Token</h3>
+Der Personal Access Tokel erlaubt dem Build-Agent die Authentifizierung gegenüber den Visual Studio Team Services.
+<div style="border:0px;height:500px;">
+		<img src="images/vsts_access_tokens.png" class="fragment current-visible" alt="Create personal access token step 1" style="border:0px;margin-left:250px;margin-top:50px">
+		<img src="images/vsts_access_token.png" class="fragment " alt="Create personal access token step 2" style="border:0px">
+		<img src="images/vsts_access_created.png" class="fragment" alt="Create personal access token step 2" style="border:0px">
+</div>
+
+				</section>
 			</section>
 			<section>
 				<section>
 					<h2>circleci</h2>
 				</section>
-				<<section>
+				<section>
 					...
 			</section>
 			</section>
@@ -444,9 +522,16 @@ sudo systemctl start docker</code></pre>
 					https://developer.amazon.com/de/docs/custom-skills/request-and-response-json-reference.html
 
 				</section>
+			
 			</section>
-
-
+			<section>
+				<section>
+						<h2>Bilder</h2>
+				</section>
+				<section>
+						https://cakebuild.net/assets/img/logo.png<br/>
+				</section>
+			</section>
 		</div>
 	</div>
 
