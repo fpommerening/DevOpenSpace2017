@@ -321,7 +321,7 @@ Die kostenfrei bereitgestellten Build-Agents werden in Windows-Umgebungen auf Az
 Sie erlauben keine Erstellung von Docker-Container. Dafür muss ein eigener externer Build-Agent bzw. Docker-Host bereitgestellt werden.
 <br />
 <br />
-<a href="https://www.visualstudio.com/de/vso/" target="_blank">Zugang / Anmeldung (per Live-ID)</a>
+<a href="https://www.visualstudio.com/de/vso/" target="_blank">Zugang / Anmeldung</a> (per Live-ID)
 				</section>
 				<section>
 					<h3>Erstellung Personal Access Token</h3>
@@ -331,15 +331,35 @@ Der Personal Access Tokel erlaubt dem Build-Agent die Authentifizierung gegenüb
 		<img src="images/vsts_access_token.png" class="fragment " alt="Create personal access token step 2" style="border:0px">
 		<img src="images/vsts_access_created.png" class="fragment" alt="Create personal access token step 2" style="border:0px">
 </div>
-
-				</section>
-			</section>
-			<section>
-				<section>
-					<h2>circleci</h2>
 				</section>
 				<section>
+					<h3>Starten des Build-Agent</h3>
 					...
+				</section>
+				<section>
+					<h3>Defintion Build </h3>
+					Beispiel: Erstellung einer .NET Core 2 Anwendung mit den Container-Erstellung und Veröffentlichung auf Dockerhub.
+					<br />
+					<br />
+					<h4>Herkunft für Quellcode</h4>
+					<ul>
+						<li>Visual Studio Team Services</li>
+						<li>GitHub</li>
+						<li>Bitbucket</li>
+						<li>externe Git-Repos</li>
+						<li>externe Subversion-Repos</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Auswahl Vorlage</h4>
+					<img src="images/vsts_build_04.png" style="border:0px;">
+					Auswahl: Empty process
+				</section>
+				<section>
+						<h4>Defintion Name / Build-Agent</h4>
+						<img src="images/vsts_build_01.png" style="border:0px"><br />
+						Eigenen Build-Agents werden in der Agent queue <b>Default</b> angelegt.
+				</section>
 			</section>
 			</section>
 			<section>
