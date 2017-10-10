@@ -662,18 +662,56 @@ services:
 				<section>
 					<h2>Serverless Computing mit OPENFASS</h2>
 					<h3>Grundlagen und Archtektur</h3>
+					<img src="images/openfaas_logo.png" style="border:0px"/>
 				</section>
 				<section>
-					...
+					<ul>
+						<li>Framework für Serverless Functions</li>
+						<li>Open source <a href="https://github.com/openfaas/faas" target="_blank">GitHub</a></li>
+						<li>Integriertes Portal (UI) für Deployment / Test</li>
+						<li>Ausführung auf Docker Swarm oder Kubernates</li>
+						<li>Skalierbar</li>
+						<li>Verwendung diverser Programmiersprachen GO, node.js, .NET ...</li>
+					</ul><br /><br />
+					Die Funktionen erhalten die Anfragen per HTTP POST und Port 8080.
 				</section>
+				<section>
+
+				</section>
+				<section>
+						
+						<br />
+						<h4>Function Watchdog</h4>
+						<ul>
+							<li>kleiner HTTP-Server</li>
+							<li>geschrieben in Golong</li>
+							<li>erlaubt die Nutzung jedes Consolen-Programmes als Funktion</li>
+							<li>Sendet HTTP-Anfrage an STDIN (Consolen Eingaben) des Zielprogramms</li>
+							<li>Empfängt STDOUT (Consolen Ausgabe) und sendet sie per HTTP</li>
+						</ul>
+					</section>
 			</section>
 			<section>
 				<section>
 					<h2>Serverless Computing mit OPENFASS</h2>
 					<h3>Funktionsentwicklung mit .NET Core / node.js</h3>
+					<img src="images/openfaas_logo.png" style="border:0px"/>
 				</section>
 				<section>
-					...
+					<img src="images/nodejs-new-pantone-black.png" style="border:0px; height:200px; float:left" />
+					<img src="images/nancyfx_logo.png" style="border:0px; height:200px; float:right" />
+					<h4>.NET Core</h4>
+					<ul>
+						<li>ASP.NET Core WebAPI <a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api" target="_blank" class="infolink"></a></li>
+						<li>NancyFX <a href="https://github.com/NancyFx/Nancy/wiki/Documentation" target="_blank" class="infolink"></a></li>
+					</ul>
+					<br />
+					<br />
+					<h4>node.js</h4>
+					<ul>
+						<li>HTTP-Modul</li>
+						<li>express.js <a href="http://expressjs.com/" target="_blank" class="infolink"></a></li>
+					</ul>
 				</section>
 			</section>
 			<section>
@@ -682,7 +720,8 @@ services:
 					<h3>Funktionen für Amazon Alexa</h3>
 				</section>
 				<section>
-					...
+						https://developer.amazon.com/de/
+
 				</section>
 			</section>
 			<section>
