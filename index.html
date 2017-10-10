@@ -201,12 +201,12 @@
 Task("Aufgabe1").Does(() =>
 {
   ...
-}
+});
 
 Task("Aufgabe2").IsDependentOn("Aufgabe1").Does(() =>
 {
   ...
-}
+});
 
 Task("Default").IsDependentOn("Aufgabe2");
 
@@ -223,6 +223,18 @@ RunTarget(target);</code></pre>
 				</section>
 				<section>
 						<h3>Fehlerbehandlung</h3>
+						<h4>Verhalten bei Fehlern</h4>
+						<pre><code class="csharp">Task("Aufgabe").Does(() => {  ...  })
+   .OnError(ex =>{   ...   });</code></pre>
+   <h4>Fehler ignorieren</h4>
+							<pre><code class="csharp">Task("Aufgabe")
+   .ContinueOnError()
+   .Does(() => {   ...   });
+</code></pre>
+<h4>Verhalten nach Ausführung</h4>
+<pre><code class="csharp">Task("Aufgabe")
+   .Does(() => {  ...  })
+   .Finally(() => {  ... });</code></pre>
 				</section>
 			</section>
 			<section>
@@ -345,7 +357,7 @@ Optional:<br />
 </ul>
 <br />
 <br />
-Je nach Umgebung z.B. TFS 2017 werden spezielle Tags benötigt.
+Je nach Umgebung z.B. TFS 2017 werden spezielle <a href="https://hub.docker.com/r/microsoft/vsts-agent/" target="_blank">Tags</a> benötigt.
 				</section>
 				<section>
 					<h3>Defintion Build </h3>
@@ -564,10 +576,34 @@ Je nach Umgebung z.B. TFS 2017 werden spezielle Tags benötigt.
 			</section>
 			<section>
 				<section>
-					<h2>Docker Swarm mit Docker-Compose / Docker-Stack</h2>
+					<h2>Docker Swarm mit <br /> Docker-Compose / Docker-Stack</h2>
 				</section>
 				<section>
-					...
+					Docker-Stack ist Teil des Docker-Engine selbst. <br/>Docker-Compose muss u.a. unter Linux manuell installiert werden.
+					<br />
+					<br />
+					Die Dateistruktur ist ab identisch (V3+). Docker-Compose ignorierte bestimmte Einstellungen.
+					<br />
+					<br />
+					Docker-Stack kann nur auf einem Docker-Host der Teil eines Swarm (Cluster) ist ausgeführt werden.
+				</section>
+				<section>
+						<h4>Stack bereitstellen <a href="https://docs.docker.com/engine/reference/commandline/stack_deploy/" target="_blank" class="infolink"></a></h4>
+						<pre><code class="docker">docker stack deploy [OPTIONS] STACK</code></pre>
+						<table>
+								<tbody>
+									<tr>
+										<td>-compose-file , -c</td>
+										<td>Name / Pfad zum Compose-File</td>
+									</tr>
+								</tbody>
+						</table>
+						<h4>Stack entfernen <a href="https://docs.docker.com/engine/reference/commandline/stack_rm/" target="_blank" class="infolink"></a></h4>
+						<pre><code class="docker">docker stack rm STACK</code></pre>
+						<h4>Stacks anzeigen <a href="https://docs.docker.com/engine/reference/commandline/stack_ls/" target="_blank" class="infolink"></a></h4>
+						<pre><code class="docker">docker stack ls</code></pre>
+						<h4>Services eines Stacks anzeigen <a href="https://docs.docker.com/engine/reference/commandline/stack_services/" target="_blank" class="infolink"></a></h4>
+						<pre><code class="docker">docker stack services [OPTIONS] STACK</code></pre>
 				</section>
 			</section>
 			<section>
@@ -591,7 +627,35 @@ sudo systemctl start docker</code></pre>
 				</section>
 				<section>
 					<h3>Multiarchitektur</h3>
-					...
+					Docker-Swarm verknüpft verschiedene Architekturen:<br />
+					<ul>
+						<li>x64  / ARM</li>
+						<li>Linux / Windows </li>
+					</ul><br />
+					<br />
+					Über Label können die Knoten gekennzeichnet werden. Informationen wie das OS bzw. die CPU-Architektur sind bereits vorhanden.
+					<h4>Label setzen <a href="https://docs.docker.com/engine/swarm/manage-nodes/#add-or-remove-label-metadata" target="_blank" class="infolink"></a></h4>
+					<pre><code class="docker">docker node update --label-add KEY[=VALUE]</code></pre>
+					<h4>Label entfernen <a href="https://docs.docker.com/engine/swarm/manage-nodes/#add-or-remove-label-metadata" target="_blank" class="infolink"></a></h4>
+					<pre><code class="docker">docker node update --label-rm KEY</code></pre>
+				</section>
+				<section>
+					<h3>Einschränkungen</h3>
+					<h4>Service-Defintion </h4>
+					<pre><code class="docker">docker service create --name myservice 
+--constraint 'node.labels.type == web' myimage:latest </code></pre>
+					<h4>Stack-Definition (Compose-File)</h4>
+					<pre><code class="docker">
+version: "3.2"
+services:
+   myservice:
+     image: myimage:latest
+     deploy:
+        placement:
+           constraints:
+              - 'node.role == manager'
+              - 'node.platform.os == linux'
+              - 'node.labels.type == web'</code></pre>										
 				</section>
 			</section>
 			<section>
