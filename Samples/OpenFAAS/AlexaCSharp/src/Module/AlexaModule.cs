@@ -20,10 +20,10 @@ namespace FP.DevSpace2017.Alexa.Module
                         response = ExecuteIntent(request);
                         break;
                     case "SessionEndedRequest":
-                        response = CreatePlaneTextResponse("Meetup zu Ende - Auf Wiedersehen beim nächsten Mal.");
+                        response = CreatePlaneTextResponse("Meetup zu Ende - Auf Wiedersehen beim nÃ¤chsten Mal.");
                         break;
                     default:
-                        response = CreatePlaneTextResponse("Willkommen zum Meetup. Was darf ich für dich tun?");
+                        response = CreatePlaneTextResponse("Willkommen zum Meetup. Was darf ich fÃ¼r dich tun?");
                         break;
                 }
                 return Response.AsJson(response);
@@ -43,7 +43,7 @@ namespace FP.DevSpace2017.Alexa.Module
                 case "greeting":
                     return CreatePlaneTextResponse("Hallo und Willkommen zum Meetup");
                 case "sendoff":
-                    return CreatePlaneTextResponse("Vielen Dank für eure Teilnahme und bis zum nächsten Meetup.");
+                    return CreatePlaneTextResponse("Vielen Dank fÃ¼r eure Teilnahme und bis zum nÃ¤chsten Meetup.");
                 case "amazon.helpintent":
                     return CreatePlaneTextResponse("Wenn du Hilfe brauchst rufe Torsten oder Greogor.");
                 case "amazon.stopintent":
