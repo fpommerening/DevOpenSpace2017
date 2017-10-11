@@ -41,9 +41,9 @@ namespace FP.DevSpace2017.Alexa.Module
             switch (indent.Name.ToLowerInvariant())
             {
                 case "greeting":
-                    return CreatePlaneTextResponse("Hallo und Willkommen zum Meetup");
+                    return CreatePlaneTextResponse("Hallo und Willkommen zum zehnten Developer Open Space in Leipzig. Ich bin Alexa und wünsche euch viel Spaß beim Workshop dot Net in the big Box.");
                 case "sendoff":
-                    return CreatePlaneTextResponse("Vielen Dank für eure Teilnahme und bis zum nächsten Meetup.");
+                    return CreatePlaneTextResponse("Vielen Dank für eure Teilnahme und bis zum nächsten mal.");
                 case "amazon.helpintent":
                     return CreatePlaneTextResponse("Wenn du Hilfe brauchst rufe Torsten oder Greogor.");
                 case "amazon.stopintent":
