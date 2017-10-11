@@ -188,7 +188,7 @@
 						<li>Open Source</li>
 						<li>Cross platform</li>
 						<li>Projekt der .NET Foundation</li>
-						<li>Erweiterbar durch Plugin</li>
+						<li>Erweiterbar durch Plugins</li>
 						<li>Visual Studio Code Unterstützung</li>
 						<li>Integration Build-Server wie TFS, Jenkins, Teamcity ...</li>
 						<li>Quelle: <a href="https://cakebuild.net/" target="_blank">https://cakebuild.net/</a></li>
@@ -214,7 +214,7 @@ RunTarget(target);</code></pre>
 				</section>
 				<section>
 					<h3>Erweiterungen</h3>
-					Erweiterung für bestimmte Aufgaben z.B. Komprimierung oder Ausführung von Docker-Befehlen werden als Nuget-Pakete z.T. durch die Community bereitgestellt.
+					Erweiterungen für bestimmte Aufgaben z.B. Komprimierung oder Ausführung von Docker-Befehlen werden als Nuget-Pakete z.T. durch die Community bereitgestellt.
 					<br/>Die Einbindung erfolgt mit der Direktive #addin
 					<pre><code class="csharp">#addin "Cake.Docker"</code></pre>
 					<pre><code class="csharp">#addin nuget:?package=SharpZipLib</code></pre>
@@ -732,7 +732,90 @@ services:
 					</div>
 				</section>
 				<section>
+					<h4>Starten: ALEXA > Getting Started</h4>
+					<img src="images/alexa_skill_01.png" style="border:0px;"/>
+				</section>
+				<section>
+					<h4>Skill bearbeiten / neu erstellen</h4>
+					<img src="images/alexa_skill_02.png" style="border:0px;"/>
+				</section>
+				<section>
+					<h4>Allgemeine Informationen</h4>
+					<img src="images/alexa_skill_03.png" style="border:0px; height:575px;margin-right:20px; float:left"/>
+					Erstellung:<br />
+					<ul>
+						<li>Type</li>
+						<li>Sprache</li>
+					</ul><br /><br />
+					Erstellung / Bearbeitung:<br />
+					<ul>
+						<li>Name</li>
+						<li>Aufruf</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Interaction Modell</h4>
+					<h5>Befehle (Intent Schema)</h5>
+Wichtig: auch Standardbefehle z.B. Hilfe vorsehen<br />
+Optional: Defintion von Platzhaltern / Variablen (Slots)
+					<pre><code class="json">{
+"intents":
+  [
+    {  "intent": "greeting"  },
+    {  "intent": "sendoff"
+       "slots": [{
+        "name": "NextMeetup", 
+        "type": "AMAZON.DATE"
+	  }] 	 
+	},
+    {  "intent": "AMAZON.HelpIntent"  },
+    {  "intent": "AMAZON.StopIntent"  }
+  ]  
+}</code></pre>
 
+				</section>
+				<section>
+<h4>Zuordnung Aufruf-Befehl (Sample Uterances)</h4>
+<pre><code class="AsciiDoc">greeting sag hallo
+greeting beginne treffen
+breaknow pause
+sendoff sag auf wiedersehen
+sendoff beende treffen
+sendoff schluss jetzt</code></pre>
+<h4>Definition Variablentypen (Custom Slot Types) - Optional</h4>
+
+				</section>
+				<section>
+					<img src="images/alexa_skill_04.png" style="border:0px; height:300px"/>
+					<img src="images/alexa_skill_05.png" style="border:0px; height:300px"/>
+				</section>
+				<section>
+					<h4>Globale Einstellungen z.B. Endpunkt</h4>
+					Endpunkt muss verschlüsselte Kommunikation (HTTPS) unterstützen.
+					<img src="images/alexa_skill_06.png" style="border:0px; height:530px"/>
+				</section>
+				<section>
+						<h4>SSL-Zertifikat für Endpunkt</h4>
+						<ul>
+							<li>Zertifikat für definierten Endpunkt (auch Let's Encrypt möglich)</li>
+							<li>Wild Card Zertifikat z.B. von Thawte</li>
+							<li>Selbst-signiertes Zertifikat</li>
+						</ul>
+						<img src="images/alexa_skill_07.png" style="border:0px; "/>
+					</section>
+				<section>
+					<h4>Testen</h4>
+					<img src="images/alexa_skill_08.png" style="border:0px;height:600px"/>
+				</section>
+				<section>
+					<h4>Function-Entwicklung (Auswahl)</h4>
+					node.js: <a href="https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs" target="_blank">alexa-skills-kit-sdk-for-nodejs</a> (Offiziell)
+					<br />
+					<br />
+					.NET:  <a href="https://github.com/timheuer/alexa-skills-dotnet" target="_blank">alexa-skills-dotnet</a> (Community)
+					<br />
+					<br />
+					Manuell auf Basis des <a href="https://developer.amazon.com/de/docs/custom-skills/request-and-response-json-reference.html" target="_blank">json-Schema</a>
 				</section>
 			</section>
 			<section>
