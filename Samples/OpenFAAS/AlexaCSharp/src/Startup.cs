@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Nancy.Owin;
 
-namespace FP.DevSpace2017.WebApp
+namespace FP.DevSpace2017.Alexa
 {
     public class Startup
     {
